@@ -1,0 +1,436 @@
+{
+	"info": {
+		"_postman_id": "f3d86465-9194-4133-a472-26f5e625a324",
+		"name": "Learn by API",
+		"description": "This collection walks you through the first few steps in making requests to API endpoints.\n\nClick __Fork__ to import the collection into your own workspace.\n\n* Once you have the collection in Postman you will see it in __Collections__ on the left of the app.\n* Click __Learn by API__ to open the collection.\n* Click `GET` __Begin Learning__ to open the request.\n* Click __Send__.\n* The response __Body__ will walk you through the steps!\n\n![learn-by-web-rendered](https://user-images.githubusercontent.com/6666370/105840879-a8355780-5fcb-11eb-80bb-4a262f4bdd7d.jpg)\n\n* Make sure you click **Visualize** to see the instructions.\n\n_The API is hosted on [Glitch](https://glitch.com/~learn-by-api)._",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Begin Learning",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code should be 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    \r",
+							"\r",
+							"    pm.test(\"Status code name OK string\", function () {\r",
+							"        pm.response.to.have.status(\"OK\");\r",
+							"    });\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "learn-by-api.glitch.me/intro?id=1",
+					"host": [
+						"learn-by-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"intro"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Click __Send__ in Postman to begin learning about APIs!"
+			},
+			"response": [
+				{
+					"name": "2. Query parameter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "learn-by-api.glitch.me/intro?id=1",
+							"host": [
+								"learn-by-api",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"intro"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jun 2020 15:30:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "888"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"378-VMVE63x9paZG0LDc/iNaBby6Ak8\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"You sent a request with a query parameter!\",\n    \"intro\": \"If you're using the Learn by API template inside Postman - click **Visualize** for a much more informative view of this info!\",\n    \"info\": [\n        {\n            \"note\": \"Your query parameter indicates that you want to retrieve some information with an `id` value of `1`.\"\n        },\n        {\n            \"note\": \"You would use this to retrieve a particular piece of information from the API, for example a customer using their unique id.\"\n        },\n        {\n            \"note\": \"Query parameters are included in the request address 'query string' and allow you to request specific data / services.\"\n        }\n    ],\n    \"next\": \"Now try adding a path parameter, this time by editing the URL directly. In the address, enter `/:category` before `/intro` then in **Params**, enter a **Value** for the `category` row e.g. `hats` and click **Send** again.\",\n    \"pic\": \"https://assets.postman.com/postman-docs/learn-by-api-add-path-param.jpg\"\n}"
+				},
+				{
+					"name": "4. Post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "learn-by-api.glitch.me/:category/intro?id=1",
+							"host": [
+								"learn-by-api",
+								"glitch",
+								"me"
+							],
+							"path": [
+								":category",
+								"intro"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "hats"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jun 2020 15:31:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "919"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"397-/wj8XFGukjoZmG+/Fcid29wDm10\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"You sent a post request!\",\n    \"intro\": \"If you're using the Learn by API template inside Postman - click **Visualize** for a much more informative view of this info!\",\n    \"info\": [\n        {\n            \"note\": \"Post requests let you send data to the API, for example to add a new customer record for an online shop.\"\n        },\n        {\n            \"note\": \"Post requests normally include body data indicating the information you want to add via the API, formatted in JSON or XML.\"\n        },\n        {\n            \"note\": \"Notice that the status code is 400, this is because your body data is not yet complete.\"\n        }\n    ],\n    \"next\": \"Now try adding some body data. In **Body** near the top under the request address, select **raw**, choose **JSON** from the drop-down list on the right. Enter the following object (a name and value surrounded by curly brackets) into the text field and click **Send**:\",\n    \"json_content\": {\n        \"name\": \"mary\"\n    },\n    \"pic\": \"https://assets.postman.com/postman-docs/learn-by-api-enter-body-data.jpg\"\n}"
+				},
+				{
+					"name": "3. Path parameter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "learn-by-api.glitch.me/:category/intro?id=1",
+							"host": [
+								"learn-by-api",
+								"glitch",
+								"me"
+							],
+							"path": [
+								":category",
+								"intro"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "hats"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jun 2020 15:31:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "753"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"2f1-zQBx1WrEEUwwQ6y0yAuuhtqRa4E\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"You sent a path parameter!\",\n    \"intro\": \"If you're using the Learn by API template inside Postman - click **Visualize** for a much more informative view of this info!\",\n    \"info\": [\n        {\n            \"note\": \"Path parameters form part of the request URL, with the value passed in from Postman when the request runs.\"\n        },\n        {\n            \"note\": \"Anything you add in your address with a colon `:` in front of it will be treated as a path parameter.\"\n        },\n        {\n            \"note\": \"You passed the value: `hats` so your request was sent to: `learn-by-api.glitch.me/hats/intro?id=1`\"\n        }\n    ],\n    \"next\": \"Now change the method. Above, to the left of the address, click the drop-down to change **GET** to **POST**, then click **Send** again.\",\n    \"pic\": \"https://assets.postman.com/postman-docs/learn-by-api-select-post-method.jpg\"\n}"
+				},
+				{
+					"name": "5. Body data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"mary\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "learn-by-api.glitch.me/:category/intro?id=1",
+							"host": [
+								"learn-by-api",
+								"glitch",
+								"me"
+							],
+							"path": [
+								":category",
+								"intro"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "hats"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jun 2020 15:31:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "875"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"36b-i4qModX5cfT74mU1v8EfoNrSw8k\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"You sent body data!\",\n    \"intro\": \"If you're using the Learn by API template inside Postman - click **Visualize** for a much more informative view of this info!\",\n    \"info\": [\n        {\n            \"note\": \"The data you sent included a field called `name` with a value of `mary`.\"\n        },\n        {\n            \"note\": \"The status code is 201 to indicate that a resource was created.\"\n        },\n        {\n            \"note\": \"A real-world API would use the posted data to add a new record to a data source such as a database.\"\n        }\n    ],\n    \"next\": \"You've completed the collection! 🏆You can view the source code for this API on Glitch by visiting `https://glitch.com/~learn-by-api`. In Postman, click **New** > **Templates** to find more collections. Try out the **API Learner** collection to create your own API and call it inside Postman!\",\n    \"rip\": \"[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/cf574a217e39178d2c20)\"\n}"
+				},
+				{
+					"name": "1. Intro",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "learn-by-api.glitch.me/intro",
+							"host": [
+								"learn-by-api",
+								"glitch",
+								"me"
+							],
+							"path": [
+								"intro"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jun 2020 15:30:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1035"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"40b-mDt2N4k0JFNIbDR8++ezWJC5spI\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Welcome to the Learn by API collection! 🎒🤖\",\n    \"intro\": \"The requests will walk you through learning about APIs inside Postman. Click **Visualize** above this section to continue learning.\",\n    \"info\": [\n        {\n            \"note\": \"You already sent an API request! 🎉This is the JSON response.\"\n        },\n        {\n            \"note\": \"Above you'll see the details of the request you sent. The address includes a base URL and a path `/intro` - you made a request to the _endpoint_ at this location.\"\n        },\n        {\n            \"note\": \"Notice to the right and above the response here that the API returned a **200 OK** status code - hover over it for more detail.\"\n        },\n        {\n            \"note\": \"In History on the left you can look back at your requests.\"\n        }\n    ],\n    \"next\": \"Now try a query string parameter. In **Params** enter `id` in the **Key** field, and `1` as the **Value**. You will see `?id=1`  appear at the end of the request address after `/intro`. If you have more than one parameter they will be separated by `&`. Click **Send** again.\",\n    \"pic\": \"https://assets.postman.com/postman-docs/learn-by-api-add-query-string.jpg\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var template = `",
+					"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js\"></script>",
+					"    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css\">",
+					"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js\"></script>",
+					"    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/googlecode.min.css\">",
+					"    <script type=\"text/javascript\">",
+					"        function getContent(orig){",
+					"            var converter = new showdown.Converter(), text = orig, html = converter.makeHtml(text);",
+					"            return html;",
+					"        }",
+					"    </script>",
+					"    <h2>{{response.title}}</h2>",
+					"    <ul>",
+					"    <div id=\"notes\"></div>",
+					"    {{#if response.next}}<h3>Next</h3>",
+					"    <div id=\"next\"></div>",
+					"    {{/if}}",
+					"    {{#if response.error}}",
+					"    <h2 style=\"color:red\">Error</h2>",
+					"    <p><strong>{{response.error}}</strong></p>",
+					"    {{/if}}",
+					"    <script type=\"text/javascript\">",
+					"        if(\"{{json_info}}\".length>0)",
+					"            document.write(\"<pre>{{json_info}}</pre>\");",
+					"    </script>",
+					"    <script type=\"text/javascript\">",
+					"        if(\"{{response.rip}}\".length>0)",
+					"            document.write(getContent(\"{{response.rip}}\"));",
+					"    </script>",
+					"    <script type=\"text/javascript\">",
+					"        if(\"{{response.pic}}\".length>0)",
+					"            document.write(\"<img src='{{response.pic}}' alt='postman steps' style='max-width:600px'/>\");",
+					"    </script>",
+					"    ",
+					"    <!--content to process before rendering-->",
+					"    <script type=\"text/javascript\">",
+					"        pm.getData(function(error, data) {",
+					"            let json_strings = []; let i; let info_array = data.response.info;",
+					"            var notes=\"<div id='notes'>\";",
+					"            for(i=0; i<info_array.length; i++){",
+					"                notes+=getContent(info_array[i].note);",
+					"                if(info_array[i].json_content){",
+					"                    notes+=\"<pre style='padding-left:20px'><code class='json'>\"+JSON.stringify(info_array[i].json_content, null, 2)+\"</code></pre>\";",
+					"                }",
+					"                if(info_array[i].pic)",
+					"                    notes+=\"<img src='\"+info_array[i].pic+\"' alt='postman steps'/>\";",
+					"            }",
+					"            notes+=\"</div>\"",
+					"            document.getElementById(\"notes\").innerHTML=notes;",
+					"            document.getElementById(\"next\").innerHTML=getContent(data.response.next);",
+					"            hljs.initHighlighting();",
+					"        });",
+					"    </script>",
+					"`;",
+					"if(pm.response.headers.get(\"Content-Type\").includes(\"json\")){",
+					"    pm.visualizer.set(template, {",
+					"        response: pm.response.json(),",
+					"        json_info: JSON.stringify(pm.response.json().json_content)",
+					"    });",
+					"}",
+					"else if(pm.response.headers.get(\"Content-Type\").includes(\"html\")){",
+					"    pm.visualizer.set(`{{info}}`, {info:\"Hmm this seems to be HTML and not JSON - to start learning enter `learn-by-api.glitch.me/intro` in the address bar, choose GET method, and click Send!\"});",
+					"}"
+				]
+			}
+		}
+	]
+}
